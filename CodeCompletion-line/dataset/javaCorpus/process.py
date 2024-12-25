@@ -60,8 +60,14 @@ def trim_to_half_with_gt(line):
 def java_code_cut(input_file, output_file, num_lines=0):
 
     # 读取文件并处理
-    with open(input_file, "r", encoding="utf-8") as f:
-        lines = f.readlines()
+    # for train_20.txt
+    if "train_" in input_file:
+        with open(input_file, "r", encoding="utf-8") as f:
+            lines = [json.loads(i)['input'] for i in f.readlines()]
+    else:
+        with open(input_file, "r", encoding="utf-8") as f:
+            lines = f.readlines()
+    
 
     # 检查行数是否足够
     if len(lines) < num_lines or num_lines == 0:
