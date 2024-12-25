@@ -3,10 +3,10 @@
 export CUDA_VISIBLE_DEVICES=2
 export MODE=surrogate
 LANG=java
-# DATADIR=../../CodeCompletion-token/dataset/javaCorpus/token_completion
 SAMPLE_RATIO=20
 Percentage=0.01
 DATADIR="../dataset/javaCorpus/${Percentage}/${SAMPLE_RATIO}/"
+# DATADIR=../../CodeCompletion-token/dataset/javaCorpus/token_completion
 LITFILE=../../CodeCompletion-token/dataset/javaCorpus/literals.json
 OUTPUTDIR=../../CodeCompletion-token/save/javaCorpus
 PRETRAINDIR=../../CodeCompletion-token/save/javaCorpus/microsoft/CodeGPT-small-java/20/checkpoint-epoch-4
