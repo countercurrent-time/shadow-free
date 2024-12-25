@@ -73,10 +73,8 @@ def java_code_cut(input_file, output_file, num_lines=0):
 
     processed_data = []
     for idx, line in selected_lines:
-        input = json.loads(line.strip())['input']
-        id = json.loads(line.strip())['id']
-        input_part, gt_part = trim_to_half_with_gt(input)
-        processed_data.append({"id": id, "input": input_part, "gt": gt_part})
+        input_part, gt_part = trim_to_half_with_gt(line.strip())
+        processed_data.append({"id": str(idx), "input": input_part, "gt": gt_part})
 
     # 打乱顺序
     random.shuffle(processed_data)
