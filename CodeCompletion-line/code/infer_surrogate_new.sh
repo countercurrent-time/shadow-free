@@ -6,7 +6,7 @@ LANG=java
 DATADIR=../../CodeCompletion-token/dataset/javaCorpus/token_completion
 LITFILE=../../CodeCompletion-token/dataset/javaCorpus/literals.json
 OUTPUTDIR=../../CodeCompletion-token/save/javaCorpus
-PRETRAINDIR=../../CodeCompletion-token/save/javaCorpus/microsoft/CodeGPT-small-java/100/checkpoint-epoch-4
+PRETRAINDIR=../../CodeCompletion-token/save/javaCorpus/microsoft/CodeGPT-small-java/20/checkpoint-epoch-4
 LOGFILE=completion_javaCorpus_eval.log
 python -u run_lm.py \
         --mode=$MODE \

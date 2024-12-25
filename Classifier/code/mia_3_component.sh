@@ -2,7 +2,7 @@
 Percentage=0.01
 
 
-for SAMPLE_RATIO in {10..20..10}
+for SAMPLE_RATIO in {20..20..10}
 do
 
 
@@ -26,10 +26,10 @@ python mia.py \
     --classifier_model_path ${CLASSIFIER_SAVE_DICT} \
     --weight_decay=0.01 \
     --mode victim \
-    --use_tree_component \
     --seed ${SEED} \
     --epoch ${EPOCH} \
-    # --save_results
+    --save_results
+    # --use_tree_component \
     
 
 # python naive_bayes.py \
