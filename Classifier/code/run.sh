@@ -32,8 +32,9 @@ python run.py \
     --lit_file ${LITFILE} \
     --classifier_model_path ${MODEL} \
     --weight_decay=0.01 \
-    --mode checkpoint-epoch-5_surrogate \
-    --seed 43
+    --seed 43 \
+    --mode surrogate
+    # --mode checkpoint-epoch-5_surrogate \
 
 done
 
