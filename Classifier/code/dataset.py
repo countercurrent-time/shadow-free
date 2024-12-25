@@ -23,9 +23,9 @@ def prepare_data(args):
     else:
         raise
     
-    predictions_train = get_data(args.prediction_data_folder_path,f'train_{model_name}_{args.mode}_epoch-{args.epoch}_infer.txt')
+    predictions_train = get_data(args.prediction_data_folder_path,f'train_{model_name}_{args.mode}_infer.txt')
     
-    predictions_test = get_data(args.prediction_data_folder_path,f'test_{model_name}_{args.mode}_epoch-{args.epoch}_infer.txt')
+    predictions_test = get_data(args.prediction_data_folder_path,f'test_{model_name}_{args.mode}_infer.txt')
     # 模型的inference结果.
     
     
