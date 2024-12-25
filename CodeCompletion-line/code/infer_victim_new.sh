@@ -1,6 +1,6 @@
 # run codegpt infer
 # run new prepare or load existing dataset first
-export CUDA_VISIBLE_DEVICES=2
+export CUDA_VISIBLE_DEVICES=0,1
 export MODE=victim
 LANG=java
 SAMPLE_RATIO=20
