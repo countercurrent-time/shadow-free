@@ -3,6 +3,7 @@
 # 3. 在1:1上进行评测
 PER_NODE_GPU=2
 export CUDA_VISIBLE_DEVICES=0,1
+EPOCH=5
 MODEL=microsoft/CodeGPT-small-java #change model
 MASTER_PORT=95497 # modify
 SURROGATE_MODEL=microsoft/CodeGPT-small-java # modify:[microsoft/CodeGPT-small-java-adaptedGPT2,gpt2,microsoft/CodeGPT-small-java,rnn,transformer]
@@ -32,7 +33,8 @@ python run.py \
     --classifier_model_path ${MODEL} \
     --weight_decay=0.01 \
     --mode checkpoint-epoch-5_surrogate \
-    --seed 43
+    --seed 43 \
+    --epoch ${EPOCH}
 
 done
 

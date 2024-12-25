@@ -1,7 +1,8 @@
 export PER_NODE_GPU=2
 export CUDA_VISIBLE_DEVICES=0,1 # modify
 export MASTER_PORT=43422 # modify
-export SURROGATE_MODEL=microsoft/CodeGPT-small-java # modify
+export EPOCH=5
+export VICTIM_MODEL=microsoft/CodeGPT-small-java
 export SURROGATE_MODEL=microsoft/CodeGPT-small-java
 # export VICTIM_MODEL=microsoft/CodeGPT-small-java-adaptedGPT2
 # export VICTIM_MODEL=codeparrot/codeparrot-small
