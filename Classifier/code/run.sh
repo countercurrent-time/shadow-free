@@ -3,7 +3,7 @@
 # 3. 在1:1上进行评测
 PER_NODE_GPU=2
 export CUDA_VISIBLE_DEVICES=0,1
-MODEL=microsoft/CodeGPT-small-java #change model
+MODEL=microsoft/codebert-base #change model
 MASTER_PORT=95497 # modify
 SURROGATE_MODEL=microsoft/CodeGPT-small-java # modify:[microsoft/CodeGPT-small-java-adaptedGPT2,gpt2,microsoft/CodeGPT-small-java,rnn,transformer]
 Percentage=0.01
