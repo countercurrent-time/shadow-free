@@ -321,7 +321,7 @@ def main():
             else:
                 inputs = {'input_ids': batch['input_ids'].to(device),
                         'attention_mask': batch['input_mask'].to(device),
-                        'labels': batch['label'].to(device)}
+                        'labels': batch['labels'].to(device)}
                 outputs = model(**inputs)
                 loss = outputs[0]
             if args.gradient_accumulation_steps > 1:
