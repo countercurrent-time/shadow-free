@@ -15,7 +15,8 @@ do
 
 LANG=java    
 CLASSIFIER_SAVE_DICT=../classifier_save/javaCorpus/${SURROGATE_MODEL##*/}/${SAMPLE_RATIO}/
-PREDICTION_DATA_FOLDER_PATH=../../CodeCompletion-token/dataset/javaCorpus/${Percentage}/${SAMPLE_RATIO}/
+# PREDICTION_DATA_FOLDER_PATH=../../CodeCompletion-token/dataset/javaCorpus/${Percentage}/${SAMPLE_RATIO}/
+PREDICTION_DATA_FOLDER_PATH=../../CodeCompletion-token/save/javaCorpus/
 LITFILE=../../CodeCompletion-token/dataset/javaCorpus/literals.json
 
 python run.py \
