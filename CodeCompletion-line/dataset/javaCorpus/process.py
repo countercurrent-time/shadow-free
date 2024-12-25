@@ -7,7 +7,7 @@ def find_middle_space_index(text):
     space_indices = [i for i, char in enumerate(text) if char == ' ']
     
     if not space_indices:
-        return None  # 如果没有空格，返回 None
+        return len(text) // 2  # 如果没有空格，返回 None
     
     # 计算中间空格的索引
     middle_index = len(space_indices) // 2  # 例如，如果有 9 个空格，第五个空格是索引 4 (从 0 开始)
