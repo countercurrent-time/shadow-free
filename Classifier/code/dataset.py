@@ -280,6 +280,9 @@ def ClassificationDataset_collate_fn(batch,padding_value=0):
     gt = [b[1] for b in batch]
     pred = [b[2] for b in batch]
     labels = [b[3] for b in batch]
+    print(len(inputs))
+    print(len(gt))
+    print(len(pred), len(labels))
     return {
         "input_ids":torch.tensor(inputs).long(),
         "labels":torch.tensor(labels).long(),
