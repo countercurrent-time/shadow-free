@@ -1,7 +1,7 @@
 # run codegpt infer
 # run new prepare or load existing dataset first
 export CUDA_VISIBLE_DEVICES=2
-export MODE=victim
+export MODE=surrogate
 LANG=java
 DATADIR=../../CodeCompletion-token/dataset/javaCorpus/token_completion
 LITFILE=../../CodeCompletion-token/dataset/javaCorpus/literals.json
