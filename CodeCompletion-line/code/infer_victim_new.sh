@@ -1,0 +1,23 @@
+# run codegpt infer
+# run new prepare or load existing dataset first
+export CUDA_VISIBLE_DEVICES=0
+export MODE=victim
+LANG=java
+DATADIR=../../CodeCompletion-token/dataset/javaCorpus/token_completion
+LITFILE=../../CodeCompletion-token/dataset/javaCorpus/literals.json
+OUTPUTDIR=../../CodeCompletion-token/save/javaCorpus
+PRETRAINDIR=../../CodeCompletion-token/save/javaCorpus/microsoft/CodeGPT-small-java/100/checkpoint-epoch-4
+LOGFILE=completion_javaCorpus_eval.log
+python -u run_lm.py \
+        --mode=$MODE \
+        --data_dir=$DATADIR \
+        --lit_file=$LITFILE \
+        --langs=$LANG \
+        --output_dir=$OUTPUTDIR \
+        --pretrain_dir=$PRETRAINDIR \
+        --log_file=$LOGFILE \
+        --model_type=gpt2 \
+        --block_size=1024 \
+        --eval_line \
+        --logging_steps=100 \
+        --seed=42 

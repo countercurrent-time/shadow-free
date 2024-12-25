@@ -1,17 +1,19 @@
+# train surrogate model
 LANG=java 
 
 LITFILE=../dataset/javaCorpus/literals.json
 OUTPUTDIR=../save/javaCorpus # save model to this directory
-PRETRAINDIR=gpt2  # [microsoft/CodeGPT-small-java,microsoft/CodeGPT-small-java-adaptedGPT2,gpt2]
-PER_NODE_GPU=1       
+# PRETRAINDIR=gpt2  # [microsoft/CodeGPT-small-java,microsoft/CodeGPT-small-java-adaptedGPT2,gpt2]
+PRETRAINDIR=microsoft/CodeGPT-small-java
+PER_NODE_GPU=2
 
 MASTER_PORT=90927 #change every time
-export CUDA_VISIBLE_DEVICES=3 #specify GPU, change every time
+export CUDA_VISIBLE_DEVICES=0,1 #specify GPU, change every time
 
 
-for SAMPLE_RATIO in {10..20..10}
+for SAMPLE_RATIO in {20..20..20}
 do
-LOGFILE="completion_javaCorpus_${PRETRAINDIR##*/}_${SAMPLE_RATIO}".log
+LOGFILE=completion_javaCorpus.log
 DATADIR=../dataset/javaCorpus/token_completion/
 echo $LOGFILE
 python -u run_lm.py \
@@ -21,7 +23,7 @@ python -u run_lm.py \
         --output_dir=$OUTPUTDIR \
         --pretrain_dir=$PRETRAINDIR \
         --log_file=$LOGFILE \
-        --model_type=gpt2 \
+        --model_type=codegen \
         --block_size=1024 \
         --do_train \
         --gpu_per_node $PER_NODE_GPU \
@@ -38,7 +40,7 @@ python -u run_lm.py \
         --not_pretrain \
         --sample_ratio $SAMPLE_RATIO \
         --save_sample \
-        --MASTER_PORT $MASTER_PORT &
+        --MASTER_PORT $MASTER_PORT
 
 
 done
