@@ -376,9 +376,11 @@ def main():
     logger.info('[best_acc]: {}\n\n'.format(json.dumps(res, indent=2)))
     if args.save_results:
         logger.info('results saved \n')
+        logger.info('[result]: {}\n\n'.format(all_logits))
         data_dir = os.path.join(args.data_dir,args.lang,args.surrogate_model,args.sample_ratio)
         save_dir = os.path.join(args.classifier_save_dir,f'res_{args.sample_ratio}_{args.seed}.json')
-        with open(os.path.join(data_dir,'test'+'.json'),'r') as f:
+        # with open(os.path.join(data_dir,'test'+'.json'),'r') as f:
+        with open(os.path.join(data_dir,f'{args.model_name}_{args.epoch}_' + 'test'+'.json'),'r') as f:
             data = f.readlines()
         with open(save_dir,'w')as f:
             for i,d in enumerate(data):
