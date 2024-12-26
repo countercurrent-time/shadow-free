@@ -9,7 +9,7 @@ do
 LANG=java    
 CLASSIFIER_SAVE_DICT=../classifier_save/PTM3/javaCorpus/${SURROGATE_MODEL##*/}/${SAMPLE_RATIO}/${SEED}/
 PREDICTION_DATA_FOLDER_PATH=../../CodeCompletion-line/dataset/javaCorpus/${Percentage}/${SAMPLE_RATIO}/
-LITFILE=../dataset/javaCorpus/literals.json
+LITFILE=../../CodeCompletion-token/dataset/javaCorpus/literals.json
 
 python mia.py \
     --do_lower_case \
