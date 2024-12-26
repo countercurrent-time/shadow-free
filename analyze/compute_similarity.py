@@ -42,7 +42,7 @@ for d in data:
     d['similarity'] = compute_similarity(d['gt'], d['prediction'])
     new_data.append(d)
 
-new_data = sort(new_data, key=lambda x: x['similarity'])
+new_data = sorted(new_data, key=lambda x: x['similarity'])
 
 with open(output_file, 'w') as f:
     for d in new_data:
