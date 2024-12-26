@@ -6,6 +6,11 @@ from sklearn.ensemble import GradientBoostingClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import roc_auc_score, classification_report
 
+# for TF-IDF
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.metrics.pairwise import cosine_similarity
+
+
 # Initialize the pre-trained embedding model (e.g., CodeBERT)
 MODEL_NAME = "microsoft/codebert-base"
 model = AutoModel.from_pretrained(MODEL_NAME)
@@ -26,6 +31,28 @@ def compute_similarity(x, y):
     v_y = extract_embeddings(y)
     return sim(v_x, v_y)
 
+def compute_tfidf_similarity(x, y):
+    # Use TfidfVectorizer to compute TF-IDF
+    vectorizer = TfidfVectorizer()
+    tfidf_matrix = vectorizer.fit_transform([x, y])
+
+    # Convert TF-IDF matrix to array for easier interpretation
+    tfidf_array = tfidf_matrix.toarray()
+
+    # Calculate cosine similarity
+    cosine_sim = cosine_similarity(tfidf_matrix[0:1], tfidf_matrix[1:2])
+
+    # Display results
+    # print("TF-IDF Matrix:")
+    # print(tfidf_array)
+
+    # print("\nFeature Names:")
+    # print(vectorizer.get_feature_names_out())
+
+    # print("\nCosine Similarity between the two strings:")
+    # print(cosine_sim[0][0])
+    return cosine_sim[0][0]
+
 
 # Example data (replace with real dataset)
 input_file = '/kaggle/working/shadow-free/Classifier/classifier_save/javaCorpus/CodeGPT-small-java/20/res_20_50.json'
@@ -39,7 +66,8 @@ new_data = []
 
 for d in data:
     d = json.loads(d)
-    d['similarity'] = float(compute_similarity(d['gt'], d['prediction']))
+    # d['similarity'] = float(compute_similarity(d['gt'], d['prediction']))
+    d['similarity'] = float(compute_tfidf_similarity(d['gt'], d['prediction']))
     new_data.append(d)
 
 new_data = sorted(new_data, key=lambda x: x['similarity'])
