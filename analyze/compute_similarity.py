@@ -39,7 +39,7 @@ new_data = []
 
 for d in data:
     d = json.loads(d)
-    d['similarity'] = compute_similarity(d['gt'], d['prediction'])
+    d['similarity'] = float(compute_similarity(d['gt'], d['prediction']))
     new_data.append(d)
 
 new_data = sorted(new_data, key=lambda x: x['similarity'])
