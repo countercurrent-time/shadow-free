@@ -7,7 +7,8 @@ do
 
 
 LANG=java    
-CLASSIFIER_SAVE_DICT=../classifier_save/PTM3/javaCorpus/${SURROGATE_MODEL##*/}/${SAMPLE_RATIO}/${SEED}/
+# CLASSIFIER_SAVE_DICT=../classifier_save/PTM3/javaCorpus/${SURROGATE_MODEL##*/}/${SAMPLE_RATIO}/${SEED}/
+CLASSIFIER_SAVE_DICT=../classifier_save/javaCorpus/CodeGPT-small-java/20
 PREDICTION_DATA_FOLDER_PATH=../../CodeCompletion-line/dataset/javaCorpus/${Percentage}/${SAMPLE_RATIO}/
 LITFILE=../../CodeCompletion-token/dataset/javaCorpus/literals.json
 

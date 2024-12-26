@@ -24,7 +24,8 @@ declare -A SEED_GROUPS
 # SEED_GROUPS["2"]="30 42 58"
 # SEED_GROUPS["3"]="10 21 31"
 # SEED_GROUPS["1"]="50 54 98"
-SEED_GROUPS["0"]="59 20 41"
+# SEED_GROUPS["0"]="59 20 41"
+SEED_GROUPS["1"]="50"
 
 
 # Iterate over each VICTIM_MODEL
