@@ -19,7 +19,7 @@ def trim_to_half_with_gt(line):
     words = line.split()
 
     # 确保 input_part 至少包含一个 <s> 以外的 token
-    if len(words) <= 2 and words[0] == "<s>" and words[-1] == "</s>":
+    if len(words) <= 4 and words[0] == "<s>" and words[-1] == "</s>":
         return line, ""  # 返回原始行作为 input_part，空字符串作为 gt_part
 
     half_index = len(words) // 2
