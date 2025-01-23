@@ -88,7 +88,7 @@ def java_code_cut(input_file, output_file, num_lines=0):
         processed_data.append({"id": str(idx), "input": input_part, "gt": gt_part})
 
     # 打乱顺序
-    random.shuffle(processed_data)
+    # random.shuffle(processed_data)
 
     # 将结果写入 JSON 文件，每行对应一段非格式化 JSON 信息
     with open(output_file, "w", encoding="utf-8") as f:
