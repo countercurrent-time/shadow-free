@@ -59,10 +59,10 @@ def load_json(file_path):
 
 # Paths to the dataset files
 input_dir = "../CodeCompletion-line/dataset/javaCorpus/0.01/20/"
-true_file = "train_CodeGPT-small-java_victim_infer.txt"
-false_file = "test_CodeGPT-small-java_victim_infer.txt"
-true_gt_file = "train_surrogate.json"
-false_gt_file = "test_surrogate.json"
+true_file = input_dir + "train_CodeGPT-small-java_victim_infer.txt"
+false_file = input_dir + "test_CodeGPT-small-java_victim_infer.txt"
+true_gt_file = input_dir + "train_surrogate.json"
+false_gt_file = input_dir + "test_surrogate.json"
 
 # Load the data
 true_data = load_txt(true_file)
