@@ -140,10 +140,10 @@ for (x, y, y_perturbed) in non_member_data:
 # true_data = sorted(true_data)
 # false_data = sorted(false_data)
 
-with open('similarity_true.txt') as f:
+with open('similarity_true.txt', 'w') as f:
     for i in true_data:
         f.write(i)
 
-with open('similarity_false.txt') as f:
+with open('similarity_false.txt', 'w') as f:
     for i in false_data:
         f.write(i)
