@@ -76,15 +76,15 @@ group_size = 12
 member_data = []
 non_member_data = []
 
-def pair_data(true_gt_file, true_data):
+def pair_data(true_gt_data, true_data):
     paired_data = []
     grouped_lines = [true_data[i:i + group_size] for i in range(0, len(true_data), group_size)]
     
-    for input, output in zip(true_gt_file, grouped_lines):
-        if input['id'] == output['id']:
-            paired_data.append((input['gt'], output[0], output[1:]))
-        else:
-            raise ValueError(f"Mismatched IDs: {input['id']} and {output['id']}")
+    if len(true_gt_data) != len(grouped_lines):
+        raise ValueError(f"Mismatched lengths")
+
+    for input, output in zip(true_gt_data, grouped_lines):
+        paired_data.append((input['gt'], output[0], output[1:]))
     return paired_data
  
 
