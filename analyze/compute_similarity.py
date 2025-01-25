@@ -142,8 +142,8 @@ for (x, y, y_perturbed) in non_member_data:
 
 with open('similarity_true.txt', 'w') as f:
     for i in true_data:
-        f.write(i)
+        f.write(str(i) + '\n')
 
 with open('similarity_false.txt', 'w') as f:
     for i in false_data:
-        f.write(i)
+        f.write(str(i) + '\n')
