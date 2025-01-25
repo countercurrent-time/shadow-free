@@ -76,12 +76,12 @@ group_size = 12
 member_data = []
 non_member_data = []
 
-def pair_data(true_gt_data, true_data):
+def pair_data(true_data, true_gt_data):
     paired_data = []
     grouped_lines = [true_data[i:i + group_size] for i in range(0, len(true_data), group_size)]
     
     if len(true_gt_data) != len(grouped_lines):
-        raise ValueError(f"Mismatched lengths")
+        raise ValueError(f"Mismatched lengths: f{len(true_gt_data)} and f{len(grouped_lines)}")
 
     for input, output in zip(true_gt_data, grouped_lines):
         paired_data.append((input['gt'], output[0], output[1:]))
